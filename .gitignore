@@ -1,5 +1,6 @@
 # Custom
 sut_examples/cgi_decode_coverage.png
+.idea/
 
 *.bundle.*
 lib/
