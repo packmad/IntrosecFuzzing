@@ -12,16 +12,21 @@ docker build -t introsecfuzz .
 docker run -it -v $(pwd)/:/IntrosecFuzzing/ introsecfuzz
 ``` 
 
+### Running an example
+```shell
+python3 sut_examples/cgi_coverage.py 
+```
+
 
 ### Running the challenge
 
-1. Download the executable from [here](https://www.dropbox.com/s/9mi8tir6948vyga/fuzzme.exe?dl=1). 
+1. Download the executable from [here](https://www.dropbox.com/s/e3hfqbbc7a6uhgq/fuzzme.exe?dl=1). 
 2. Copy `fuzzme.exe` in the `fuzzme_exe` folder.
 
 
 If you are under Linux or macOS this command can do the job for you:
 ```shell
-curl -L -o ./fuzzme_exe/fuzzme.exe https://www.dropbox.com/s/9mi8tir6948vyga/fuzzme.exe?dl=1
+curl -L -o ./fuzzme_exe/fuzzme.exe https://www.dropbox.com/s/e3hfqbbc7a6uhgq/fuzzme.exe?dl=1
 ``` 
 
 Remember, if you run `fuzzme.exe` with the correct arguments you get:
