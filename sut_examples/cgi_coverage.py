@@ -60,6 +60,6 @@ if __name__ == '__main__':
     plt.title('Coverage of cgi_decode() with random inputs')
     plt.xlabel('# of inputs')
     plt.ylabel('Lines covered')
-    plt.savefig('cgi_decode_coverage.png')
-    #plt.show()
+    #plt.savefig('cgi_decode_coverage.png')
+    plt.show()
 

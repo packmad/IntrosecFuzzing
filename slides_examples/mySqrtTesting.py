@@ -1,5 +1,7 @@
 import random
-from myfuzzer.Timer import Timer
+
+def assertEqualsEps(x, y, epsilon=1e-8):
+    assert abs(x - y) < epsilon  # use math.isclose!
 
 
 def my_sqrt(x):
@@ -10,10 +12,6 @@ def my_sqrt(x):
         approx = guess
         guess = (approx + x / approx) / 2
     return approx
-
-
-def assertEqualsEps(x, y, epsilon=1e-8):
-    assert abs(x - y) < epsilon  # use math.isclose!
 
 
 if __name__ == '__main__':
