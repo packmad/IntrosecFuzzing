@@ -20,28 +20,5 @@ python3 sut_examples/cgi_coverage.py
 
 ### Running the challenge
 
-1. Download the executable from [here](https://www.dropbox.com/s/e3hfqbbc7a6uhgq/fuzzme.exe?dl=1). 
+1. Download the `fuzzme.exe` executable from [our CTF website](https://introsec.s3.eurecom.fr/challenges#FuzzMe-3). 
 2. Copy `fuzzme.exe` in the `fuzzme_exe` folder.
-
-
-If you are under Linux or macOS this command can do the job for you:
-```shell
-curl -L -o ./fuzzme_exe/fuzzme.exe https://www.dropbox.com/s/e3hfqbbc7a6uhgq/fuzzme.exe?dl=1
-``` 
-
-Remember, if you run `fuzzme.exe` with the correct arguments you get:
-```shell
-./fuzzme.exe ? ? ? ?
-0
-1
-2
-3
-4
-5
-6
-7
-8
-ISEC{flag}
-```
-
-In this way the output of the program can be used as a coverage feedback.
