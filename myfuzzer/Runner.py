@@ -1,5 +1,6 @@
-from typing import Tuple, List, Any, Union, Callable, Set
 import subprocess
+import re
+from typing import Tuple, List, Any, Union, Callable, Set
 
 from myfuzzer.Coverage import Coverage, Location, StatementCoverage
 from abc import ABC, abstractmethod
@@ -97,3 +98,23 @@ class ProgramRunner(Runner):
         else:
             outcome = self.UNRESOLVED
         return result, outcome
+
+
+class ProgramBasicBlockCoverageRunner(ProgramRunner):
+    """ Based on https://github.com/packmad/LLMV-PrintBBUIDs """
+    bb_regex = re.compile(r"~(\d+)~")
+
+    def __init__(self, program: str) -> None:
+        super().__init__(program)
+        self._coverage = set()
+
+    def run(self, *args) -> Tuple[subprocess.CompletedProcess, Outcome]:
+        result, outcome = super().run(*args)
+        for line in result.stdout.split('\n'):
+            match = self.bb_regex.search(line)
+            if match:
+                self._coverage.add(int(match.group(1)))
+        return result, outcome
+
+    def coverage(self) -> Set[int]:
+        return self._coverage

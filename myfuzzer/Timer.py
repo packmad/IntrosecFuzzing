@@ -1,6 +1,7 @@
 import time
 
 from typing import Type, Any
+from types import TracebackType
 
 
 def clock() -> float:
@@ -8,9 +9,6 @@ def clock() -> float:
     Return the number of fractional seconds elapsed since some point of reference.
     """
     return time.perf_counter()
-
-
-from types import TracebackType
 
 
 class Timer:
@@ -40,7 +38,7 @@ class Timer:
 
 
 def some_long_running_function() -> None:
-    i = 10000000
+    i = 100000000
     while i > 0:
         i -= 1
 

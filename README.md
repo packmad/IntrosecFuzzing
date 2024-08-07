@@ -1,5 +1,13 @@
 # IntroSec -- Fuzzing
 
+This is the code for the lecture on Fuzzing for the Introduction To Cybersecurity course at the [EURECOM](https://www.eurecom.fr/) research center. 
+
+### Repository organization
+
++ [fuzzme_exe](https://github.com/packmad/IntrosecFuzzing/tree/master/fuzzme_exe)
++ [myfuzzer](https://github.com/packmad/IntrosecFuzzing/tree/master/myfuzzer)
++ [slides_examples](https://github.com/packmad/IntrosecFuzzing/tree/master/slides_examples)
++ [sut_examples](https://github.com/packmad/IntrosecFuzzing/tree/master/sut_examples)
 
 ### Setting up
 
@@ -12,13 +20,19 @@ docker build -t introsecfuzz .
 docker run -it -v $(pwd)/:/IntrosecFuzzing/ introsecfuzz
 ``` 
 
+A new `root` shell will pop up, from which you can run the code (see below).
+
+
 ### Running an example
 ```shell
 python3 sut_examples/cgi_coverage.py 
 ```
 
 
-### Running the challenge
+### Solving the challenge
 
-1. Download the `fuzzme.exe` executable from [our CTF website](https://introsec.s3.eurecom.fr/challenges#FuzzMe-3). 
-2. Copy `fuzzme.exe` in the `fuzzme_exe` folder.
+1. Download the `fuzzme.exe` executable from [our CTF website](https://introsec.s3.eurecom.fr/challenges#FuzzMe-3)
+2. Copy `fuzzme.exe` in the `fuzzme_exe` folder
+3. Implement your fuzzer, and plug it into `sut_examples/fuzzme_exe.py`
+4. Run it: `python3 sut_examples/fuzzme_exe.py`
+5. Wait! If it takes more than an hour there is something wrong

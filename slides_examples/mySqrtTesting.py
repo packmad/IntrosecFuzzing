@@ -1,7 +1,8 @@
-import random
+import math
 
-def assertEqualsEps(x, y, epsilon=1e-8):
-    assert abs(x - y) < epsilon  # use math.isclose!
+
+def assertEqualsTolerance(x, y, epsilon=1e-8):
+    assert math.isclose(x, y, rel_tol=epsilon)  # abs(x - y) < epsilon
 
 
 def my_sqrt(x):
@@ -15,4 +16,5 @@ def my_sqrt(x):
 
 
 if __name__ == '__main__':
-    pass
+    assertEqualsTolerance(math.sqrt(4), my_sqrt(2))
+    # What other tests can you think of?
