@@ -4,10 +4,10 @@ This is the code for the lecture on Fuzzing for the Introduction To Cybersecurit
 
 ### Repository organization
 
-+ [fuzzme_exe](https://github.com/packmad/IntrosecFuzzing/tree/master/fuzzme_exe)
-+ [myfuzzer](https://github.com/packmad/IntrosecFuzzing/tree/master/myfuzzer)
-+ [slides_examples](https://github.com/packmad/IntrosecFuzzing/tree/master/slides_examples)
-+ [sut_examples](https://github.com/packmad/IntrosecFuzzing/tree/master/sut_examples)
++ [fuzzme_exe](https://github.com/packmad/IntrosecFuzzing/tree/master/fuzzme_exe): is an empty folder into which the binary executables to be tested should be put. 
++ [myfuzzer](https://github.com/packmad/IntrosecFuzzing/tree/master/myfuzzer): the fuzzer's code.
++ [slides_examples](https://github.com/packmad/IntrosecFuzzing/tree/master/slides_examples): the code snippets used in some slides.
++ [sut_examples](https://github.com/packmad/IntrosecFuzzing/tree/master/sut_examples): software under test examples, in which different ways of fuzzing are shown.
 
 ### Setting up
 
@@ -34,5 +34,6 @@ python3 sut_examples/cgi_coverage.py
 1. Download the `fuzzme.exe` executable from [our CTF website](https://introsec.s3.eurecom.fr/challenges#FuzzMe-3)
 2. Copy `fuzzme.exe` in the `fuzzme_exe` folder
 3. Implement your fuzzer, and plug it into `sut_examples/fuzzme_exe.py`
-4. Run it: `python3 sut_examples/fuzzme_exe.py`
-5. Wait! If it takes more than an hour there is something wrong
+4. Create your Docker container
+5. Run it: `python3 sut_examples/fuzzme_exe.py`
+6. Wait! If it takes more than an hour there is something wrong
