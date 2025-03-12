@@ -2,6 +2,8 @@
 
 This is the code for the lecture on Fuzzing for the Introduction To Cybersecurity course at the [EURECOM](https://www.eurecom.fr/) research center. 
 
+The slides are [here](https://docs.google.com/presentation/d/1WJDzp586N5Zchg7U6_s4VH6BnBZ6mtugzDrbSGJ1hjw/).
+
 ### Repository organization
 
 + [fuzzme_exe](https://github.com/packmad/IntrosecFuzzing/tree/master/fuzzme_exe): is an empty folder into which the binary executables to be tested should be put. 
