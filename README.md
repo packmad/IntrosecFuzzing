@@ -40,3 +40,5 @@ python3 sut_examples/cgi_coverage.py
 4. Create your Docker container
 5. Run it: `python3 sut_examples/fuzzme_exe.py`
 6. If it takes more than an hour, you should consider improving your fuzzer.
+
+How did I create `fuzzme.exe`? Have a look at [this](https://github.com/packmad/LLMV-PrintBBUIDs/)
