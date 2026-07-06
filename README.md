@@ -6,15 +6,18 @@ The slides are [here](https://docs.google.com/presentation/d/1WJDzp586N5Zchg7U6_
 
 ### Repository organization
 
-+ [fuzzme_exe](https://github.com/packmad/IntrosecFuzzing/tree/master/fuzzme_exe): is an empty folder into which the binary executables to be tested should be put. 
-+ [myfuzzer](https://github.com/packmad/IntrosecFuzzing/tree/master/myfuzzer): the fuzzer's code.
 + [slides_examples](https://github.com/packmad/IntrosecFuzzing/tree/master/slides_examples): the code snippets used in some slides.
 + [sut_examples](https://github.com/packmad/IntrosecFuzzing/tree/master/sut_examples): software under test examples, in which different ways of fuzzing are shown.
++ [fuzzme_exe](https://github.com/packmad/IntrosecFuzzing/tree/master/fuzzme_exe): is an empty folder into which the binary executables to be tested should be put. 
++ [myfuzzer](https://github.com/packmad/IntrosecFuzzing/tree/master/myfuzzer): the fuzzer's code.
++ [myfuzzer](https://github.com/packmad/IntrosecFuzzing/blob/master/fuzzme_exe.py): fuzzer's logic you have to implement.
+
+
 
 ### Setting up
 
 1. [Clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) this repo or download the zip.
-2. Install [docker](https://www.docker.com/). If you are under Windows, I strongly recommend that you first install [Ubuntu Linux](https://ubuntu.com/wsl) and then proceed with the installation of docker inside Ubuntu.
+2. Install [docker](https://www.docker.com/).
 3. Open a [shell](https://en.wikipedia.org/wiki/Shell_(computing)), and then run the following commands:
 
 ```shell
@@ -36,9 +39,16 @@ python3 sut_examples/cgi_coverage.py
 
 1. Download the `fuzzme.exe` executable from [our CTF website](https://introsec.s3.eurecom.fr/challenges#FuzzMe-3)
 2. Copy `fuzzme.exe` into the `fuzzme_exe` folder
-3. Implement your fuzzer, and plug it into `sut_examples/fuzzme_exe.py`
+3. Implement your fuzzer starting from `fuzzme_exe.py`
 4. Create your Docker container
-5. Run it: `python3 sut_examples/fuzzme_exe.py`
+5. Run it: `python3 fuzzme_exe.py`
 6. If it takes more than an hour, you should consider improving your fuzzer.
 
-How did I create `fuzzme.exe`? Have a look at [this](https://github.com/packmad/LLMV-PrintBBUIDs/)
+
+### Fuzzing your code
+
+1. Compile your C source (unfortunately one single C file is supported) using [this project](https://github.com/packmad/LLMV-PrintBBUIDs/) to get a `stdout` feedback on the executed basic blocks.
+2. Copy your executable in the `fuzzme_exe` folder
+3. Implement your fuzzer starting from `fuzzme_exe.py` (change the executable's name accordingly) 
+4. Create your Docker container
+5. Run it: `python3 fuzzme_exe.py`

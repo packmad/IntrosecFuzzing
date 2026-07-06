@@ -16,5 +16,6 @@ def my_sqrt(x):
 
 
 if __name__ == '__main__':
-    assertEqualsTolerance(math.sqrt(4), my_sqrt(2))
+    assertEqualsTolerance(2.0, my_sqrt(4))
     # What other tests can you think of?
+    # ...
